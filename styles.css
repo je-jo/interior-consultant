@@ -1,0 +1,287 @@
+@import url(minireset.css);
+
+:root {
+    font-family: 'Montserrat', sans-serif;
+    --bg-clr: #181719;
+    --h1size: 36px;
+    --psize: 14px;
+    --plheight: 17px;
+    --pwidth: 250px;
+    --cardname: 12px;
+    --cardtitle: 10px;
+    --cardhead: 18px;
+    --cardpadding: 7px 10px;
+    --headheight: 23px;
+}
+
+/* * {
+    outline: 1px solid magenta;
+} */
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+
+    background-color: var(--bg-clr);
+    color: #fff;
+}
+
+a {
+    display: inline-block;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* navigation */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+
+    background-color: var(--bg-clr);
+    padding: 19px 12px;
+} 
+
+.nav-logo {
+    font-family: Crimson Pro;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 16px;
+    text-transform: uppercase;
+    padding: 8px;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed; 
+    top: -100%; /* moves it off screen */
+    transition: 0.3s;
+}
+
+.nav-menu.clicked {
+    top: 0;  /*this line takes it back to screen */
+    left: 0;
+    right: 0; /*for full width */
+    bottom: 0; /*and full height */
+    flex-direction: column;
+    justify-content: center; /* might need resetting for large screens */
+
+    background-color: var(--bg-clr);
+}
+
+.hamburger {
+    display: block;
+    cursor: pointer;
+    z-index: 1000;
+    color: #f2f2f2;
+    background-color: var(--bg-clr);
+    border: none;
+    
+}
+
+.material-icons {
+    font-size: 38px;
+}
+
+.close-icon {
+    display: none;
+}
+
+.nav-link {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 20px 43px;
+    /* margin-right: 43px;
+    background-color: yellowgreen;
+    outline: 1px solid magenta; */
+}
+
+
+
+a:hover {
+    font-weight: 700;
+    text-decoration: underline;
+    /* outline: 2px solid #fff; */
+}
+
+/* end navigation */ 
+
+/* main page */ 
+
+main {
+    padding: 80px 12px;
+    max-width: 1290px;
+    align-self: center;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+h1 {
+    /* position: absolute;
+width: 274px;
+height: 46px;
+left: 12px;
+top: 88px; */
+padding: 25px 0;
+font-family: "Lora";
+font-weight: 500;
+font-size: var(--h1size);
+line-height: 46px;
+/* identical to box height */
+}
+
+p {
+    /* position: absolute;
+width: 250px;
+height: 85px;
+left: 12px;
+top: 159px; */
+font-weight: 400;
+font-size: var(--psize);
+line-height: var(--plheight);
+max-width: var(--pwidth);
+
+}
+
+.container--text a {
+    padding: 24px 0;
+    font-weight: bold;
+font-size: 14px;
+line-height: 17px;
+}
+
+.arrow {
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.container--img {
+    position: relative;
+    z-index: -1;
+}
+
+
+img {
+    display: block;
+    max-height: 100%;
+    width: auto;
+}
+
+.img-small {
+    clip-path: circle(50% at 50% 50%);
+    max-height: 37px;
+    margin: 13px;
+}
+
+.img-big {
+    max-height: 555px;
+}
+
+.card {
+    width: 85%;
+    min-height: 138px;
+    position: absolute;
+    right: 11px;
+    bottom: -101px;
+    padding: var(--cardpadding);
+    background-color: var(--bg-clr);
+}
+
+.container--outer {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+.container--inner > * {
+    margin: 10px 0;
+}
+
+.container--inner p {
+    font-size: var(--cardname);
+}
+
+h4 {
+    font-size: var(--cardtitle);
+    color: #828282;
+}
+
+h3 {
+    font-size: var(--cardhead);
+    font-family: "Lora";
+    font-weight: bold;
+    line-height: var(--headheight);
+}
+
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    text-align: center;
+}
+
+@media screen and (min-width: 710px) {
+
+    .hamburger {
+       display: none;
+     }
+    
+    .nav-menu, .nav-menu.clicked {
+       position: static; /*removes all positioning from hidable menu */
+       flex-direction: row; /*reset all "clicked" styles */
+     }
+
+     .nav-link {
+        /* font-weight: 500;
+        font-size: 18px;
+        line-height: 22px; */
+        padding: 0 43px;
+     }
+    
+    }
+
+@media screen and (min-width: 768px) {
+
+    :root {
+        --h1size: 48px;
+        --psize: 24px;
+        --plheight: 29px;
+        --pwidth: 410px;
+        --cardname: 14px;
+        --cardtitle: 12px;
+        --cardhead: 24px;
+        --cardpadding: 10px 14px;
+        --headheight: 31px;
+    }
+
+    main {
+        padding: 80px 77px;
+    }
+
+    .container {
+        flex-direction: row;
+    }
+
+    .card {
+        width: 55%;
+        position: absolute;
+        right: 32px;
+        /* bottom: -82px; */
+    }
+        
+}
