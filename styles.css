@@ -10,13 +10,13 @@
     --cardname: 12px;
     --cardtitle: 10px;
     --cardhead: 18px;
-    --cardpadding: 7px 10px;
+    --cardpadding: 16px 19px;
     --headheight: 23px;
 }
 
 /* * {
     outline: 1px solid magenta;
-} */
+}  */
 
 body {
     min-height: 100vh;
@@ -69,13 +69,12 @@ a {
 }
 
 .nav-menu.clicked {
+    flex-direction: column;
+    justify-content: center; /* might need resetting for large screens */
     top: 0;  /*this line takes it back to screen */
     left: 0;
     right: 0; /*for full width */
     bottom: 0; /*and full height */
-    flex-direction: column;
-    justify-content: center; /* might need resetting for large screens */
-
     background-color: var(--bg-clr);
 }
 
@@ -123,6 +122,11 @@ main {
     padding: 80px 12px;
     max-width: 1290px;
     align-self: center;
+    flex-grow: 1;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .container {
@@ -145,7 +149,7 @@ line-height: 46px;
 /* identical to box height */
 }
 
-p {
+main p {
     /* position: absolute;
 width: 250px;
 height: 85px;
@@ -182,10 +186,8 @@ img {
     width: auto;
 }
 
-.img-small {
-    clip-path: circle(50% at 50% 50%);
+.thumb {
     max-height: 37px;
-    margin: 13px;
 }
 
 .img-big {
@@ -194,29 +196,36 @@ img {
 
 .card {
     width: 85%;
+    max-width: 300px;
     min-height: 138px;
     position: absolute;
     right: 11px;
     bottom: -101px;
     padding: var(--cardpadding);
     background-color: var(--bg-clr);
+    background-color: rgb(53, 6, 6);
+    background: #181719;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    margin-bottom: 61px;
 }
 
-.container--outer {
+.card:hover {
+    box-shadow: 3px 3px 3px 3px wheat;
+}
+
+.card-header {
+    margin-bottom: 20px;
     display: flex;
-    flex-direction: row;
-    align-items: stretch;
+    align-items: center;
+    gap: 18px;
 }
 
-.container--inner > * {
-    margin: 10px 0;
-}
-
-.container--inner p {
+.card-header h1 {
     font-size: var(--cardname);
 }
 
-h4 {
+small {
+    display: block;
     font-size: var(--cardtitle);
     color: #828282;
 }
@@ -230,30 +239,10 @@ h3 {
 
 
 footer {
-    margin-top: auto;
-    width: 100%;
+    margin: auto;
     text-align: center;
+    font-size: 14px;
 }
-
-@media screen and (min-width: 710px) {
-
-    .hamburger {
-       display: none;
-     }
-    
-    .nav-menu, .nav-menu.clicked {
-       position: static; /*removes all positioning from hidable menu */
-       flex-direction: row; /*reset all "clicked" styles */
-     }
-
-     .nav-link {
-        /* font-weight: 500;
-        font-size: 18px;
-        line-height: 22px; */
-        padding: 0 43px;
-     }
-    
-    }
 
 @media screen and (min-width: 768px) {
 
@@ -273,12 +262,30 @@ footer {
         padding: 80px 77px;
     }
 
+  
+
     .container {
         flex-direction: row;
     }
 
+    .hamburger {
+        display: none;
+      }
+     
+     .nav-menu, .nav-menu.clicked {
+        position: static; /*removes all positioning from hidable menu */
+        flex-direction: row; /*reset all "clicked" styles */
+      }
+ 
+      .nav-link {
+         /* font-weight: 500;
+         font-size: 18px;
+         line-height: 22px; */
+         padding: 0 43px;
+      }
+
     .card {
-        width: 55%;
+        width: 410px;
         position: absolute;
         right: 32px;
         /* bottom: -82px; */

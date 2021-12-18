@@ -6,7 +6,7 @@ const navLink = document.querySelectorAll(".nav-link");
 
 hamburger.addEventListener("click", toggleMenu);
 
-navLink.forEach(n => n.addEventListener("click", toggleMenu));
+navLink.forEach(navlink => navlink.addEventListener("click", toggleMenu));
 
 function toggleMenu() {
     if (menu.classList.contains("clicked")) {
