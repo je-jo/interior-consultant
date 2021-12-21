@@ -3,26 +3,21 @@
 :root {
     font-family: 'Montserrat', sans-serif;
     --bg-clr: #181719;
-    --h1size: 36px;
-    --psize: 14px;
-    --plheight: 17px;
-    --pwidth: 250px;
-    --cardname: 12px;
-    --cardtitle: 10px;
-    --cardhead: 18px;
-    --cardpadding: 16px 19px;
-    --headheight: 23px;
+    --h1-size: 36px;
+    --p-size: 14px;
+    --p-line-height: 17px;
+    --p-width: 250px;
+    --card-title: 12px;
+    --card-subtitle: 10px;
+    --card-content: 18px;
+    --card-padding: 16px 19px;
+    --card-line-height: 23px;
 }
-
-/* * {
-    outline: 1px solid magenta;
-}  */
 
 body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-
     background-color: var(--bg-clr);
     color: #fff;
 }
@@ -31,6 +26,24 @@ a {
     display: inline-block;
     text-decoration: none;
     color: #fff;
+    height: 100%;
+    border-bottom: 2px solid transparent; /* takes up height of hovered element */
+    transition: 0.1s all;
+}
+a:hover {
+    font-weight: 700;
+    border-bottom: 2px solid #fff;
+   
+}
+
+a::before {   /* pseudo element that takes up width of hovered element */
+    display: block;
+    content: attr(data-text);
+    font-weight: bold;
+    height: 0;
+    line-height: 30px;
+    overflow: hidden;
+    visibility: hidden;
 }
 
 
@@ -70,7 +83,7 @@ a {
 
 .nav-menu.clicked {
     flex-direction: column;
-    justify-content: center; /* might need resetting for large screens */
+    justify-content: center; /* might need resetting for desktop view */
     top: 0;  /*this line takes it back to screen */
     left: 0;
     right: 0; /*for full width */
@@ -96,31 +109,22 @@ a {
     display: none;
 }
 
+.nav-item {
+    padding: 20px 43px;
+}
+
 .nav-link {
     font-weight: 500;
     font-size: 18px;
     line-height: 22px;
-    padding: 20px 43px;
-    /* margin-right: 43px;
-    background-color: yellowgreen;
-    outline: 1px solid magenta; */
+    padding-bottom: 8px;
 }
-
-
-
-a:hover {
-    font-weight: 700;
-    text-decoration: underline;
-    /* outline: 2px solid #fff; */
-}
-
-/* end navigation */ 
 
 /* main page */ 
 
 main {
     padding: 80px 12px;
-    max-width: 1290px;
+    width: clamp(296px, 95vw, 1286px);
     align-self: center;
     flex-grow: 1;
     margin: auto;
@@ -129,44 +133,33 @@ main {
     justify-content: center;
 }
 
-.container {
+.container--main {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    gap: 20px;
 }
 
 h1 {
-    /* position: absolute;
-width: 274px;
-height: 46px;
-left: 12px;
-top: 88px; */
-padding: 25px 0;
-font-family: "Lora";
-font-weight: 500;
-font-size: var(--h1size);
-line-height: 46px;
-/* identical to box height */
+   padding: 25px 0;
+   font-family: "Lora";
+   font-weight: 500;
+   font-size: var(--h1-size);
+   line-height: 46px;
 }
 
 main p {
-    /* position: absolute;
-width: 250px;
-height: 85px;
-left: 12px;
-top: 159px; */
-font-weight: 400;
-font-size: var(--psize);
-line-height: var(--plheight);
-max-width: var(--pwidth);
-
+   font-weight: 400;
+   font-size: var(--p-size);
+   line-height: var(--p-line-height);
+   max-width: var(--p-width);
 }
 
 .container--text a {
-    padding: 24px 0;
+    padding: 24px 0 8px;
     font-weight: bold;
-font-size: 14px;
-line-height: 17px;
+    font-size: 14px;
+    line-height: 17px;
 }
 
 .arrow {
@@ -174,11 +167,10 @@ line-height: 17px;
     font-weight: bold;
 }
 
-.container--img {
+.container--images {
     position: relative;
     z-index: -1;
 }
-
 
 img {
     display: block;
@@ -188,6 +180,7 @@ img {
 
 .thumb {
     max-height: 37px;
+    border-radius: 50%;
 }
 
 .img-big {
@@ -201,7 +194,7 @@ img {
     position: absolute;
     right: 11px;
     bottom: -101px;
-    padding: var(--cardpadding);
+    padding: var(--card-padding);
     background-color: var(--bg-clr);
     background-color: rgb(53, 6, 6);
     background: #181719;
@@ -213,28 +206,28 @@ img {
     box-shadow: 3px 3px 3px 3px wheat;
 }
 
-.card-header {
+.header--card {
     margin-bottom: 20px;
     display: flex;
     align-items: center;
     gap: 18px;
 }
 
-.card-header h1 {
-    font-size: var(--cardname);
+.header--card h1 {
+    font-size: var(--card-title);
 }
 
 small {
     display: block;
-    font-size: var(--cardtitle);
+    font-size: var(--card-subtitle);
     color: #828282;
 }
 
-h3 {
-    font-size: var(--cardhead);
+.card-content p {
+    font-size: var(--card-content);
     font-family: "Lora";
     font-weight: bold;
-    line-height: var(--headheight);
+    line-height: var(--card-line-height);
 }
 
 
@@ -247,25 +240,20 @@ footer {
 @media screen and (min-width: 768px) {
 
     :root {
-        --h1size: 48px;
-        --psize: 24px;
-        --plheight: 29px;
-        --pwidth: 410px;
-        --cardname: 14px;
-        --cardtitle: 12px;
-        --cardhead: 24px;
-        --cardpadding: 10px 14px;
-        --headheight: 31px;
+        --h1-size: 48px;
+        --p-size: 24px;
+        --p-line-height: 29px;
+        --p-width: 410px;
+        --card-title: 14px;
+        --card-subtitle: 12px;
+        --card-content: 24px;
+        --card-padding: 10px 14px;
+        --card-line-height: 31px;
     }
 
-    main {
-        padding: 80px 77px;
-    }
-
-  
-
-    .container {
+    .container--main {
         flex-direction: row;
+        align-items: center;
     }
 
     .hamburger {
@@ -277,10 +265,7 @@ footer {
         flex-direction: row; /*reset all "clicked" styles */
       }
  
-      .nav-link {
-         /* font-weight: 500;
-         font-size: 18px;
-         line-height: 22px; */
+      .nav-item {
          padding: 0 43px;
       }
 
@@ -288,7 +273,10 @@ footer {
         width: 410px;
         position: absolute;
         right: 32px;
-        /* bottom: -82px; */
+    }
+
+    .thumb {
+        max-height: 50px;
     }
         
 }
