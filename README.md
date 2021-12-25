@@ -28,18 +28,13 @@
 - [Contact](#contact)
 - [Acknowledgements](#acknowledgements)
 
-<!-- OVERVIEW -->
-
 ## Overview
 
-![screenshot](interior-consultant.png)
+![screenshot](https://raw.githubusercontent.com/je-jo/my-team-page/main/images/interior-consultant.png)
 
-Introduce your projects by taking a screenshot or a gif. Try to tell visitors a story about your project by answering:
+First time making hamburger menu. The tutorials linked below were super helpful.
 
-- Where can I see your demo?
-- What was your experience?
-- What have you learned/improved?
-- Your wisdom? :)
+Had a bit of a hard time with bolded hover state, shifting the layout. Helpful tutorial also linked.
 
 ### Built With
 
@@ -64,11 +59,12 @@ This application/site was created as a submission to a [DevChallenges](https://d
 - [Easy hamburger menu with JS - Beginners](https://dev.to/ljcdev/easy-hamburger-menu-with-js-2do0)
 - [Accessible Mobile Navigation](https://www.a11ymatters.com/pattern/mobile-nav/)
 - [Bold on Hover… Without the Layout Shift](https://css-tricks.com/bold-on-hover-without-the-layout-shift/)
+- [This pen](https://codepen.io/MadeByMike/pen/dRoLpJ) shows a "proper" way of using CSS variables.
 
 
 
 ## Contact
 
-- Website [your-website.com](https://{your-web-site-link})
-- GitHub [@your-username](https://{github.com/your-usermame})
-- Twitter [@your-twitter](https://{twitter.com/your-username})
+- [Github](https://github.com/je-jo)
+- [Frontend Mentor](https://www.frontendmentor.io/profile/je-jo)
+- [Codepen](https://codepen.io/je-jo)
