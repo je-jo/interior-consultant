@@ -30,7 +30,7 @@
 
 ## Overview
 
-![screenshot](https://raw.githubusercontent.com/je-jo/my-team-page/main/images/interior-consultant.png)
+![screenshot](https://raw.githubusercontent.com/je-jo/interior-consultant/main/images/interior-consultant.png)
 
 First time making hamburger menu. The tutorials linked below were super helpful.
 
